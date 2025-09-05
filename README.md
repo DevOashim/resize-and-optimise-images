@@ -23,7 +23,7 @@ You can run it in **any folder** without moving images anywhere.
 
 ## 📥 Installation
 
-1. Download `optimise.exe` from [Releases](https://github.com/DevOashim/resize-and-optimise-images/releases).  
+1. Download `optimise.exe` from [Releases](https://github.com/DevOashim/resize-and-optimise-images/blob/main/optimise.exe).  
 2. Copy `optimise.exe` into:
 
    ```
