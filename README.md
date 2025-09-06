@@ -1,71 +1,90 @@
-# 🖼️ Optimise.exe - Image Resizer Tool
+# 🖼️ Image Optimiser (GUI + CLI Versions)
 
-A simple **Windows CLI tool** built with Python & PyInstaller that helps you **resize and optimise images** directly from the command line.  
-You can run it in **any folder** without moving images anywhere.
+A powerful yet simple **Image Resize & Optimiser Tool** built with **Python + Pillow**.  
+It includes both a **GUI (Tkinter)** version and a **CLI (optimise.exe)** version.
 
 ---
 
 ## ✨ Features
 
-- 📂 Works in the **current folder** (where CMD is opened).
-- 🔄 Supports multiple resize methods:
-  1. **Fill and Crop** – crops to exact ratio, no padding (like CSS `cover()`).
-  2. **Force Stretch** – resizes to exact size (may distort).
-  3. **Fit with Padding** – keeps aspect ratio and adds background color.
-- 🎨 Supports custom background color (black/white/red/blue).
-- 🖼️ Supported image formats:  
-  `.jpg`, `.jpeg`, `.png`, `.bmp`, `.tiff`
-- 💾 Auto saves processed images in a new folder with prefix name.
-- ⚡ Lightweight `.exe`, no external dependencies required.
-- 🚀 Works from **anywhere** after installation.
+### ✅ GUI Version (Tkinter)
+- 📂 Select any folder with images (`jpg, jpeg, png, bmp, tiff`)
+- 📛 Custom file prefix for processed images
+- 📐 Set target **Width × Height**
+- 🎯 Resize methods:
+  - **Fill & Crop** (cover style, no padding)
+  - **Force Stretch** (distorts to fit)
+  - **Fit with Padding** (keeps aspect ratio, background fill)
+- 🎨 Custom background color (for padding method)
+- 📉 Adjustable **JPEG quality slider** (10–100)
+- ⚡ Optimises output images (`optimize=True`, `progressive=True`)
+- 📊 Real-time progress bar and logs
+- ✅ Shows original size vs new size + percentage reduction
+- 🪟 User-friendly dark themed GUI
+
+### ✅ CLI Version (optimise.exe)
+- 📂 Works in the **current folder** (where CMD is opened)
+- 🔄 Resize methods:
+  1. Fill and Crop (cover style, no padding)
+  2. Force Stretch (may distort)
+  3. Fit with Padding (keeps aspect ratio, background color)
+- 🎨 Custom background color support
+- 🖼️ Supports `.jpg`, `.jpeg`, `.png`, `.bmp`, `.tiff`
+- 💾 Auto saves in new folder with prefix name
+- ⚡ Lightweight `.exe`, no Python required
+- 🚀 Works globally from any folder
 
 ---
 
-## 📥 Installation
+## 🚀 Installation
 
-1. Download `optimise.exe` from [Releases](https://github.com/DevOashim/resize-and-optimise-images/blob/main/optimise.exe).  
+### 🔹 For GUI (Python script)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DevOashim/resize-and-optimise-images
+   cd resize-and-optimise-images
+   ```
+2. Install dependencies:
+   ```bash
+   pip install pillow
+   ```
+3. Run the GUI:
+   ```bash
+   python optimise.py
+   ```
+
+### 🔹 For CLI (optimise.exe)
+1. Download `optimise.exe` from [Releases](https://github.com/DevOashim/resize-and-optimise-images/releases).  
 2. Copy `optimise.exe` into:
-
    ```
    C:\Windows
    ```
-
-3. Done ✅ Now you can run the tool with:
-
-```bash
-optimise
-```
-
-from **any folder, any user**.
+3. Now you can run from any folder:
+   ```bash
+   optimise
+   ```
 
 ---
 
-## 🖥️ Usage
+## 📂 Output
 
-1. Open **CMD** in the folder containing images.
-2. Run:
+Processed images are saved in a new folder named after your prefix.  
+File names are auto-numbered, e.g.:
 
-```bash
-optimise
 ```
-
-3. Follow interactive prompts:
-   - Enter file prefix name (e.g., `photo`)
-   - Enter target width (px)
-   - Enter target height (px)
-   - Choose resize method (1, 2, or 3)
-   - If padding method → choose background color
+photo-1.jpg
+photo-2.jpg
+photo-3.jpg
+```
 
 ---
 
-## 📊 Example
+## 📊 Example (CLI)
 
-**Command:**
 ```bash
 optimise
 ```
 
-**Input during run:**
 ```
 Enter file prefix name (example: photo): myimg
 Enter target width (px): 800
@@ -79,14 +98,7 @@ Enter method (1, 2, or 3): 3
 Enter background color (black/white/red/blue, default: black): white
 ```
 
-**Output:**
-```
-Processing image1.jpg...
-Processing image2.png...
-Done! Images saved in folder 'myimgs'
-```
-
-Result → `myimgs/` folder will contain:
+**Output folder → `myimgs/` containing:**
 ```
 myimg-1.jpg
 myimg-2.jpg
@@ -94,12 +106,17 @@ myimg-2.jpg
 
 ---
 
-## ⚖️ License
+## 🖼️ Example (GUI)
+- Input: `E:\MyPictures`
+- Settings: Width `800`, Height `600`, Quality `85`, Method `Fit with Padding`
+- Output: `E:\MyPictures\photos\`
 
-MIT License – free to use and modify.
+---
+
+## 📜 License
+MIT License – Free to use, modify, and distribute.
 
 ---
 
 ## 👨‍💻 Author
-
 Built with ❤️ by [@DevOasbim](https://github.com/DevOashim)
